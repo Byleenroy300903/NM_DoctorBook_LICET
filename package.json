@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Byleenroy300903/NM_DoctorBook_LICET/issues"
   },
-  "homepage": "https://github.com/Byleenroy300903/NM_DoctorBook_LICET#readme"
+  "homepage": "https://github.com/Byleenroy300903/NM_DoctorBook_LICET#readme",
+  "dependencies": {
+    "nm_doctorbook_licet": "file:"
+  }
 }
