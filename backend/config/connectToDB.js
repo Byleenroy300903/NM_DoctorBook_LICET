@@ -10,8 +10,9 @@ const connectToDB = () => {
       console.log('Connected to MongoDB');
     })
     .catch((err) => {
-      throw new Error(`Could not connect to MongoDB: ${err}`);
+      console.error(`Could not connect to MongoDB: ${err.message}`);
     });
 };
+
 
 module.exports = connectToDB;
