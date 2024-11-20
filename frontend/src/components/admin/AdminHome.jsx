@@ -57,14 +57,14 @@ const AdminHome = () => {
             <div className="layout">
                <div className="sidebar">
                   <div className="logo">
-                     <h2>MediCareBook</h2>
+                     <h2>MedicAid</h2>
                   </div>
                   <div className="menu">
                      <div className={`menu-items ${activeMenuItem === 'adminusers' ? 'active' : ''}`} onClick={() => handleMenuItemClick('adminusers')}>
                         <CalendarMonthIcon className='icon' /><Link>Users</Link>
                      </div>
                      <div className={`menu-items ${activeMenuItem === 'admindoctors' ? 'active' : ''}`} onClick={() => handleMenuItemClick('admindoctors')}>
-                        <MedicationIcon className='icon' /><Link>Doctor</Link>
+                        <MedicationIcon className='icon' /><Link>Doctors</Link>
                      </div>
                      <div className="menu-items">
                         <LogoutIcon className='icon' /><Link onClick={logout}>Logout</Link>

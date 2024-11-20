@@ -74,7 +74,7 @@ const UserHome = () => {
             <div className="layout">
                <div className="sidebar">
                   <div className="logo">
-                     <h2>MediCareBook</h2>
+                     <h2>MedicAid</h2>
                   </div>
                   <div className="menu">
                      {/* <div className="menu-items">
