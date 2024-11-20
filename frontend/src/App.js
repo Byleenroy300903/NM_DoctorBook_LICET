@@ -34,9 +34,36 @@ function App() {
             )}
           </Routes>
         </div>
-        <footer className="bg-light text-center text-lg-start">
-          <div className="text-center p-3">© 2024 Copyright: ConsultEase</div>
-        </footer>
+        <footer className="bg-primary text-center text-light text-lg-start">
+  <div className="container p-4">
+    <div className="row">
+      <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
+        <h5 className="text-uppercase">MedicAid</h5>
+        <p>Your trusted healthcare booking platform.</p>
+      </div>
+      <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h5 className="text-uppercase">Quick Links</h5>
+        <ul className="list-unstyled">
+          <li><a href="/" className="text-light">Home</a></li>
+          <li><a href="/about" className="text-light">About Us</a></li>
+          <li><a href="/contact" className="text-light">Contact</a></li>
+        </ul>
+      </div>
+      <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+        <h5 className="text-uppercase">Follow Us</h5>
+        <ul className="list-unstyled d-flex ">
+          <li><a href="https://facebook.com" className="text-light me-3">Facebook</a></li>
+          <li><a href="https://twitter.com" className="text-light me-3">Twitter</a></li>
+          <li><a href="https://linkedin.com" className="text-light">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div className="text-center p-3">
+    © 2024 Copyright: <span className="fw-bold">MedicAid</span>
+  </div>
+</footer>
       </Router>
     </div>
   );

@@ -3,76 +3,151 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+
 
 import p3 from '../../images/p3.webp'
+import booking from '../../images/booking.png'
+import features from '../../images/features.jpeg'
 
 const Home = () => {
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container fluid>
-          <Navbar.Brand>
-            <Link to={'/'}>MediCareBook</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: '100px' }}
-              navbarScroll
-            >
-            </Nav>
-            <Nav>
-              <Link to={'/'}>Home</Link>
-              <Link to={'/login'}>Login</Link>
-              <Link to={'/register'}>Register</Link>
-            </Nav>
+      <Navbar expand="lg" bg="primary" variant="dark" className="py-3">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/" className="text-white h4 text-decoration-none">
+            MedicAid
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="ms-auto">
+            <Link to="/" className="nav-link text-white">
+              Home
+            </Link>
+            <Link to="/login" className="nav-link text-white">
+              Login
+            </Link>
+            <Link to="/register" className="nav-link text-white">
+              Register
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
 
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      <div className='home-container'>
-        <div className="left-side">
-          <img alt="" src={p3} />
-        </div>
-        <div className="right-side">
-          <p>
-            <span className='f-letter'>Effortlessly schedule your doctor</span><br />
-            <span className='s-letter'>appointments with just a few clicks,</span> <br />
-            <span className='t-letter'>putting your health in your hands.</span><br />
-            <Button color='info' className='mt-3 register'><Link to={'/Login'}>Book your Doctor</Link></Button>
-          </p>
+    <div className="container-fluid d-flex align-items-center home-container py-5">
+      {/* Left Side */}
+      <div className="col-md-6 text-center">
+        <img 
+          alt="Doctor" 
+          src={p3} 
+          className="img-fluid" 
+          style={{ maxHeight: "400px" }} 
+        />
+      </div>
+      
+      {/* Right Side */}
+      <div className="col-md-6 d-flex flex-column justify-content-center text-start">
+        <h1 className="display-5 fw-bold text-primary mb-3">
+          Effortlessly schedule your doctor
+        </h1>
+        <h2 className="fs-4 text-secondary mb-3">
+          Appointments with just a few clicks,
+        </h2>
+        <h3 className="fs-5 text-muted mb-4">
+          Putting your health in your hands.
+        </h3>
+        <div>
+          <Button 
+            variant="info" 
+            size="sm" 
+            className="text-white text-uppercase fw-bold px-3"
+            style={{ width: "auto" }}
+          >
+            <Link to="/login" className="text-white text-decoration-none">
+              Book Now
+            </Link>
+          </Button>
         </div>
       </div>
+    </div>
 
 
-      <Container>
-        <h1 className='text-center mb-4'>About Us</h1>
-        <div className="right-side">
-          <p>
-            Booking a doctor appointment has never been easier. With our convenient online platform, you can quickly and effortlessly schedule your appointments from the comfort of your own home. No more waiting on hold or playing phone tag with busy receptionists.
+    <Container className="py-5">
+      <h1 className="text-center mb-5 fw-bold">About Us</h1>
 
-            Our user-friendly interface allows you to browse through a wide range of doctors and healthcare providers, making it simple to find the perfect match for your needs. Whether you require a routine check-up, specialist consultation, or urgent care, we have a diverse network of medical professionals ready to serve you.
+      {/* Section 1 */}
+      <Row className="align-items-center mb-5">
+        <Col md={6} className="mb-4 mb-md-0">
+          <img
+            src={booking} 
+            alt="Convenient Booking"
+            className="img-fluid rounded p-5"
+          />
+        </Col>
+        <Col md={6}>
+          <h2 className="mb-3 fw-bold text-primary">Why Choose Us?</h2>
+          <ul className="list-unstyled fs-5">
+            <li className="mb-3">
+              ✅ <b>Effortless Booking</b>: Schedule appointments online from the comfort of your home.
+            </li>
+            <li className="mb-3">
+              ✅ <b>Wide Network</b>: Access a diverse range of qualified doctors and specialists.
+            </li>
+            <li className="mb-3">
+              ✅ <b>Informed Choices</b>: View detailed doctor profiles, specialties, and patient reviews.
+            </li>
+            <li className="mb-3">
+              ✅ <b>Real-Time Availability</b>: Choose from open slots that fit your schedule.
+            </li>
+            <li className="mb-3">
+              ✅ <b>Instant Confirmation</b>: Receive booking confirmations and reminders.
+            </li>
+          </ul>
+        </Col>
+      </Row>
 
-            Gone are the days of flipping through phone directories or relying on word-of-mouth recommendations. Our comprehensive database provides detailed profiles of each doctor, including their specialties, qualifications, and availability. You can read reviews from other patients to gain insights into their experiences and make an informed decision.
-
-            Once you've found the ideal doctor, booking an appointment is just a few clicks away. Select a convenient date and time slot, and our system will handle the rest. You'll receive instant confirmation, along with reminders leading up to your appointment, ensuring you never miss a crucial healthcare visit.
-
-            Take control of your health and experience the convenience of online doctor appointment booking. Say goodbye to long waits and hello to seamless scheduling. Join our platform today and prioritize your well-being with ease and efficiency. <br /> <br />
-
-            With our advanced booking system, you can say goodbye to the hassle of traditional appointment booking. Our platform offers real-time availability, allowing you to choose from a range of open slots that fit your schedule. Whether you prefer early morning, evening, or weekend appointments, we have options to accommodate your needs.
-
-            We understand that emergencies can arise unexpectedly. That's why we offer same-day and next-day appointment options for urgent cases. No more waiting weeks for an available slot. We prioritize your health and ensure prompt access to medical care when you need it most.
-
-            Our platform also provides convenient features such as online payment options and the ability to securely store your medical history and insurance information. This streamlines the check-in process, saving you valuable time during your visit.<br /> <br />
-
-            In addition, our dedicated support team is available to assist you every step of the way. If you have any questions or need assistance with booking, our friendly representatives are just a call or message away. We strive to provide exceptional customer service and ensure a seamless experience for our users.
-
-            Experience the convenience and efficiency of our doctor appointment booking platform. Take charge of your health and prioritize your well-being with ease. Join our growing community of satisfied users and discover the future of healthcare scheduling.
-          </p>
-        </div>
-      </Container>
+      {/* Section 2 */}
+      <Row className="align-items-center">
+        <Col md={6} className="order-md-2 mb-4 mb-md-0">
+          <img
+            src={features}
+            alt="Advanced Features"
+            className="img-fluid rounded-circle p-5"
+          />
+        </Col>
+        <Col md={6} className="order-md-1">
+          <h2 className="mb-3 fw-bold text-primary">Our Advanced Features</h2>
+          <ul className="list-unstyled fs-5">
+            <li className="mb-3">
+              ✅ <b>Emergency Options</b>: Same-day and next-day appointments for urgent needs.
+            </li>
+            <li className="mb-3">
+              ✅ <b>Secure Storage</b>: Save medical history and insurance details for quick check-ins.
+            </li>
+            <li className="mb-3">
+              ✅ <b>Flexible Payments</b>: Enjoy seamless online payment options.
+            </li>
+            <li className="mb-3">
+              ✅ <b>24/7 Support</b>: Get assistance anytime from our dedicated support team.
+            </li>
+            <li className="mb-3">
+              ✅ <b>Efficiency & Care</b>: Spend less time scheduling and more time focusing on your health.
+            </li>
+          </ul>
+          <Button
+            variant="info" 
+            size="sm" 
+            className="text-white text-uppercase fw-bold px-3"
+            style={{ width: "auto" }}
+          >
+            Join Us Now
+          </Button>
+        </Col>
+      </Row>
+    </Container>
 
 
 

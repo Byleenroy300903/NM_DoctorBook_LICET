@@ -49,93 +49,141 @@ const Register = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container fluid>
-          <Navbar.Brand>
-            <Link to={'/'}>MediCareBook</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: '100px' }}
-              navbarScroll
-            >
-            </Nav>
-            <Nav>
-              <Link to={'/'}>Home</Link>
-              <Link to={'/login'}>Login</Link>
-              <Link to={'/register'}>Register</Link>
-            </Nav>
+      <Navbar expand="lg" bg="primary" variant="dark" className="py-3">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/" className="text-white h4 text-decoration-none">
+            MedicAid
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="ms-auto">
+            <Link to="/" className="nav-link text-white">
+              Home
+            </Link>
+            <Link to="/login" className="nav-link text-white">
+              Login
+            </Link>
+            <Link to="/register" className="nav-link text-white">
+              Register
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
 
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
 
+    <MDBContainer className="my-5">
 
-      <MDBContainer className="my-5">
+<MDBCard style={{ border: 'none', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)' }}>
+  <MDBRow style={{ background: 'rgb(240, 243, 243)' }} className='g-0 p-4'>
 
-        <MDBCard style={{ border: 'none' }}>
-          <MDBRow style={{ background: 'rgb(190, 203, 203)' }} className='g-0 border-none p-3'>
+    <MDBCol md='6' className="d-flex align-items-center">
+      <MDBCardBody className='d-flex flex-column mx-4'>
 
-            <MDBCol md='6'>
-              <MDBCardBody className='d-flex mx-3 flex-column'>
+        <div className='text-center mb-4'>
+          <span className="h3 fw-bold text-primary">Sign up to your account</span>
+        </div>
 
-                <div className='d-flex flex-row mb-2'>
-                  <span className="h1 text-center fw-bold">Sign up to your account</span>
-                </div>
-                <div className="p-2">
-                  <Form onSubmit={handleSubmit} >
-                    <label class="my-1 form-label" for="formControlLg">Full name</label>
-                    <MDBInput style={{ height: '40px' }} name='fullName' value={user.fullName} onChange={handleChange} id='formControlLg' type='text' size="sm" />
-                    
-                    <label class="my-1 form-label" for="formControlLg">Email</label>
-                    <MDBInput style={{ height: '40px' }} name='email' value={user.email} onChange={handleChange} id='formControlLg' type='email' size="sm" />
-                    
-                    <label class="my-1 form-label" for="formControlLg">Password</label>
-                    <MDBInput style={{ height: '40px' }} name='password' value={user.password} onChange={handleChange} id='formControlLg' type='password' size="sm" />
-                    
-                    <label class="my-1 form-label" for="formControlLg">Phone</label>
-                    <MDBInput style={{ height: '40px' }} name='phone' value={user.phone} onChange={handleChange} id='formControlLg' type='phone' size="sm" />
+        <Form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="formControlLgFullName">Full Name</label>
+            <MDBInput
+              name='fullName'
+              value={user.fullName}
+              onChange={handleChange}
+              id='formControlLgFullName'
+              type='text'
+              size="lg"
+              className="rounded-pill"
+            />
+          </div>
 
-                    <Container className='my-3'>
-                      <MDBRadio
-                        name='type'
-                        id='inlineRadio1'
-                        checked={user.type === 'admin'}
-                        value='admin'
-                        onChange={handleChange}
-                        label='Admin'
-                        inline
-                      />
-                      <MDBRadio
-                        name='type'
-                        id='inlineRadio2'
-                        checked={user.type === 'user'}
-                        value='user'
-                        onChange={handleChange}
-                        label='User'
-                        inline
-                      />
-                    </Container>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="formControlLgEmail">Email</label>
+            <MDBInput
+              name='email'
+              value={user.email}
+              onChange={handleChange}
+              id='formControlLgEmail'
+              type='email'
+              size="lg"
+              className="rounded-pill"
+            />
+          </div>
 
-                    <Button style={{marginTop: '20px'}} className="mb-4 bg-dark" variant='dark' size='lg' type="submit">Register</Button>
-                  </Form>
-                  <p className="mb-5 pb-md-2" style={{ color: '#393f81' }}>Have an account? <Link to={'/login'} style={{ color: '#393f81' }}>Login here</Link></p>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="formControlLgPassword">Password</label>
+            <MDBInput
+              name='password'
+              value={user.password}
+              onChange={handleChange}
+              id='formControlLgPassword'
+              type='password'
+              size="lg"
+              className="rounded-pill"
+            />
+          </div>
 
-                </div>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="formControlLgPhone">Phone</label>
+            <MDBInput
+              name='phone'
+              value={user.phone}
+              onChange={handleChange}
+              id='formControlLgPhone'
+              type='tel'
+              size="lg"
+              className="rounded-pill"
+            />
+          </div>
 
-              </MDBCardBody>
-            </MDBCol>
+          <Container className="my-3 text-center">
+            <MDBRadio
+              name='type'
+              id='inlineRadio1'
+              checked={user.type === 'admin'}
+              value='admin'
+              onChange={handleChange}
+              label='Admin'
+              inline
+              className="mx-2"
+            />
+            <MDBRadio
+              name='type'
+              id='inlineRadio2'
+              checked={user.type === 'user'}
+              value='user'
+              onChange={handleChange}
+              label='User'
+              inline
+              className="mx-2"
+            />
+          </Container>
 
-            <MDBCol md='6'>
-              <MDBCardImage style={{ mixBlendMode: 'darken' }} src={p2} alt="login form" className='rounded-start w-100' />
-            </MDBCol>
+          <div className="text-center">
+            <Button className="mb-3 px-5 btn-dark rounded-pill" variant='dark' size='lg' type="submit">Register</Button>
+          </div>
+        </Form>
 
-          </MDBRow>
-        </MDBCard>
+        <div className="text-center mt-4">
+          <p style={{ color: '#6c757d' }}>
+            Have an account? <Link to={'/login'} className="text-decoration-none text-primary fw-bold">Login here</Link>
+          </p>
+        </div>
 
-      </MDBContainer>
+      </MDBCardBody>
+    </MDBCol>
+
+    <MDBCol md='6' className="d-flex align-items-center">
+      <MDBCardImage src={p2} alt="register form" className='rounded-start w-100' style={{ mixBlendMode: 'darken' }} />
+    </MDBCol>
+
+  </MDBRow>
+</MDBCard>
+
+</MDBContainer>
     </>
   )
 }
