@@ -35,9 +35,8 @@ MedicAid is a web application designed to streamline medical appointments and ad
 
 ## 📂 Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript, React.js
-- **Backend:** Node.js
-- **Database:** MongoDB
+- **MERN Stack:** MongoDB, Express.js, React.js, Node.js
+
 
 ---
 
