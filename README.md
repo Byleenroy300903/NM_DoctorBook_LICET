@@ -48,7 +48,7 @@ MedicAid is a web application designed to streamline medical appointments and ad
    - Run `npm start` to start the frontend server.
 3. Navigate to the `backend` folder:
    - Run `npm install` to install dependencies.
-   - Run `npm start` to start the backend server.
+   - Run `node index.js` to start the backend server.
 
 ---
 
