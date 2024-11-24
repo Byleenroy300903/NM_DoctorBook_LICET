@@ -1,3 +1,13 @@
+# Project As Part of Naan Mudhalvan Program for the course : MERN Stack Powered by MongoDB
+
+## 👥 Team Members - NM ID
+                     
+- **MD Suhaib V** - `C0386B3CA0E171FA1AA495F760EC9E82`
+- **Byleen Janet Roy J** - `F2190B664808E4BA263494868ED630BB`
+- **Aishwarya Devi S** - `3B1ED787E7711409A6A4BB4911B0136A`
+- **Johna Sam Felix J I** - `05B831181121D75AFE34E48B2F957D86`
+- **Pradheep Vishal L** - `37C5B4FD4ED29C499184427AB7CF3D3B`
+
 # MedicAid
 
 A comprehensive medical booking platform built using **React.js** with seamless authentication and role-based functionalities for Admins, Common Users, and Registered Users.
