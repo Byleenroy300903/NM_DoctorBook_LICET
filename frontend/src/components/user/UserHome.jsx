@@ -74,12 +74,12 @@ const UserHome = () => {
             <div className="layout">
                <div className="sidebar">
                   <div className="logo">
-                     <h2>MedicAid</h2>
+                     <h2>MedicAid</h2> 
                   </div>
                   <div className="menu">
-                     {/* <div className="menu-items">
+                     <div className={`menu-items ${activeMenuItem === 'userhome' ? 'active' : ''}`} onClick={() => handleMenuItemClick('userhome')}>
                         <CalendarMonthIcon className='icon' /><Link>Home</Link>
-                     </div> */}
+                     </div>
                      <div className={`menu-items ${activeMenuItem === 'userappointments' ? 'active' : ''}`} onClick={() => handleMenuItemClick('userappointments')}>
                         <CalendarMonthIcon className='icon' /><Link>Appointments</Link>
                      </div>

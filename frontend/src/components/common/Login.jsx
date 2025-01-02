@@ -27,38 +27,34 @@ const Login = () => {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:8001/api/user/login", user);
       if (res.data.success) {
+        // Store token and user data
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('userData', JSON.stringify(res.data.userData));
+  
         message.success('Login successfully');
-        const isLoggedIn = JSON.parse(localStorage.getItem("userData"));
-        const { type } = isLoggedIn
-        
-        switch (type) {
-          case "admin":
-            navigate("/adminHome")
-            break;
-          case "user":
-            navigate("/userhome")
-            break;
-
-          default:
-            navigate("/Login")
-            break;
+  
+        // Determine the type of user and navigate accordingly
+        const { type } = res.data.userData;
+  
+        // Perform navigation based on the user type
+        if (type === "admin") {
+          navigate("/adminhome");
+        } else if (type === "user") {
+          navigate("/userhome");
+        } else {
+          navigate("/login");
         }
-      }
-      else{
-        message.error(res.data.message)
+        window.location.reload();
+      } else {
+        message.error(res.data.message);
       }
     } catch (error) {
-      console.log(error);
-      message.error('Something went wrong')
-
+      message.error('Login failed');
     }
   };
 
